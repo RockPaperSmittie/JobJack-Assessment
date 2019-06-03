@@ -1,11 +1,10 @@
 const express = require('express');
-const fs = require('fs');
-const path = require('path');
-const http = require('http');
+
+const dirRoutes = require('./routes/dir.js');
 
 const app = express();
 
-const server = http.createServer(app);
+app.use(dirRoutes);
 
-server.listen(2200);
+app.listen(2200);
 
