@@ -8,7 +8,9 @@ import { listItem } from './list_item.model';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
-  listItems: listItem[]  = [];
+  listItems: listItem[]  = [
+    new listItem('catimg', 'desktop/catfolder', 23, '.jpeg')
+  ];
 
   constructor() { }
 
