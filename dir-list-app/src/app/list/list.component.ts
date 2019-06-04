@@ -9,7 +9,9 @@ import { listItem } from './list_item.model';
 })
 export class ListComponent implements OnInit {
   listItems: listItem[]  = [
-    new listItem('catimg', 'desktop/catfolder', 23, '.jpeg')
+    new listItem('catimage', 'desktop/catfolder/cats/whitecats/bignfluffy/rescue/3legs/piano', 29, '.jpeg'),
+    new listItem('Dogpic', 'desktop/catfolder/dogs', 31, '.jpeg'),
+    new listItem('Pugpic', 'desktop/catfolder/Pugs', 234, '.jpeg')
   ];
 
   constructor() { }
