@@ -16,16 +16,17 @@ exports.getDir = (req, res, next) => {
     .pipe(through2.obj((data, enc, next) => {
         let fileType = data.path.split('.').pop();
         dataInfo.push({size: data.size, 
-            path: homeDir + inputDir, 
+            path: homeDir + inputDir + '/' + data.path, 
             name: data.path,
             filetype: fileType});
       next();
     }));
     //allows for data to be streamed before response is sent
-
     setTimeout(() => {
         res.status(200).json(dataInfo)
-        console.log(dataInfo.length)
+        for (i of dataInfo) {
+            console.log(i.path, i.size);
+        }
     }, 1000);
 
 };
