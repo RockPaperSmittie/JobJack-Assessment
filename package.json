@@ -10,7 +10,9 @@
   "author": "Ruan Smit",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "readdir-enhanced": "^2.2.4",
+    "through2": "^3.0.1"
   },
   "devDependencies": {
     "nodemon": "^1.19.1"
