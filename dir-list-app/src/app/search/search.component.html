@@ -4,23 +4,23 @@
       <div class="col-xs-12 col-md-6 col-md-offset-3">
         <form #postForm="ngForm" (ngSubmit)="onSearch(postForm.value)">
           <div class="form-group">
-            <label for="directory">Directory</label>
+            <label for="search">Directory</label>
             <input
+              placeholder="desktop/catfolder/images"
               type="text"
               class="form-control"
-              id="directory"
+              id="search"
               required
               ngModel
-              name="directory"
+              name="search"
             />
+            <button
+            class="btn btn-primary"
+            type="submit"
+            [disabled]="!postForm.valid">
+            Search
+          </button>
         </div>
-        <button
-        class="btn btn-primary"
-        type="submit"
-        [disabled]="!postForm.valid"
-      >
-        Search
-      </button>
       </form>
     </div>
   </div>
