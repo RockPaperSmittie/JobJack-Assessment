@@ -1,9 +1,27 @@
-<form action="submit">
-    <div class="form-group row">
-        <label for="colFormLabel" class="col-sm-2 col-form-label">Directory</label>
-        <div class="col-sm-10">
-          <input type="email" class="form-control" id="colFormLabel" placeholder="/desktop/cat-pictures/">
-          <span><button class="btn btn-primary mb-2">Search</button></span>
+
+<div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-6 col-md-offset-3">
+        <form #postForm="ngForm" (ngSubmit)="onSearch(postForm.value)">
+          <div class="form-group">
+            <label for="directory">Directory</label>
+            <input
+              type="text"
+              class="form-control"
+              id="directory"
+              required
+              ngModel
+              name="directory"
+            />
         </div>
-      </div>
-</form>
+        <button
+        class="btn btn-primary"
+        type="submit"
+        [disabled]="!postForm.valid"
+      >
+        Search
+      </button>
+      </form>
+    </div>
+  </div>
+</div>
