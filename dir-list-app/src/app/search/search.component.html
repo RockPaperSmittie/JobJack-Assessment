@@ -2,7 +2,7 @@
 <div class="container">
     <div class="row">
       <div class="col-xs-12 col-md-6 col-md-offset-3">
-        <form #postForm="ngForm" (ngSubmit)="onSearch(postForm.value)">
+        <form #postForm="ngForm" (ngSubmit)="onSearch(postForm.value)" (ngSubmit)="onPost()">
           <div class="form-group">
             <label for="search">Directory</label>
             <input
@@ -14,13 +14,13 @@
               ngModel
               name="search"
             />
-            <button
-            class="btn btn-primary"
-            type="submit"
-            [disabled]="!postForm.valid">
-            Search
-          </button>
         </div>
+        <button
+        class="btn btn-primary"
+        type="submit"
+        [disabled]="!postForm.valid">
+        Search
+      </button>
       </form>
     </div>
   </div>

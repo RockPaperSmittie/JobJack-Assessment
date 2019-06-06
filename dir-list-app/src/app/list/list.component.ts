@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { listItem } from './list_item.model';
 
+
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
@@ -10,9 +11,7 @@ import { listItem } from './list_item.model';
 export class ListComponent implements OnInit {
   listItems: listItem[]  = [
     new listItem('catimage', 'desktop/catfolder/cats/whitecats/bignfluffy/rescue/3legs/piano', 29, '.jpeg'),
-    new listItem('Dogpic', 'desktop/catfolder/dogs', 31, '.jpeg'),
-    new listItem('Pugpic', 'desktop/catfolder/Pugs', 234, '.jpeg'),
-    new listItem('Mettie', 'desktop/pictures/Beach', 25340593, '.jpeg')
+
   ];
 
   constructor() { }
