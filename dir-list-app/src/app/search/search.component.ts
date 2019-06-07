@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { listItem } from '../list/list_item.model';
+import { ACTIVE_INDEX } from '@angular/core/src/render3/interfaces/container';
 
 @Component({
   selector: 'app-search',
@@ -24,9 +25,14 @@ export class SearchComponent implements OnInit {
     });
   }
   onPost(){
-  return this.http.get('/api').subscribe(data =>{
-      console.log(data)
-    });
+    setTimeout(() => {
+      return this.http.get('/api').subscribe(data=>{
+        for(let i in data){
+          console.log(data[i].name)
+        }
+      });
+    }, 500);
+  
   }
 
 }

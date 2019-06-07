@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { listItem } from './list_item.model';
 
+import { SearchComponent } from '../search/search.component';
+
 
 @Component({
   selector: 'app-list',
