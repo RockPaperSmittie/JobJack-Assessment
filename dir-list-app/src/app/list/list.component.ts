@@ -1,24 +1,50 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { listItem } from './list_item.model';
 
-import { SearchComponent } from '../search/search.component';
+import { DataService } from '../data.service';
+import { post } from 'selenium-webdriver/http';
 
 
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
-  styleUrls: ['./list.component.css']
+  styleUrls: ['./list.component.css'],
+  providers: [DataService]
 })
 export class ListComponent implements OnInit {
-  listItems: listItem[]  = [
-    new listItem('catimage', 'desktop/catfolder/cats/whitecats/bignfluffy/rescue/3legs/piano', 29, '.jpeg'),
+  listItems: listItem[]
 
-  ];
+  constructor(private dataService: DataService) { }
 
-  constructor() { }
+  fetch(): void {
+    this.dataService.fetch()
+        .subscribe(
+            resultArray => this.listItems = resultArray,
+            error => console.log("Error :: " + error)
+        )
 
-  ngOnInit() {
+
+};
+callFetch(event){
+  if(event){
+    setTimeout(() => {
+      this.fetch();
+    }, 500);
+
   }
+}
 
+  @Input() changePost: string;
+
+
+
+  // post(data){
+  //   if(data){
+  //     this.fetch()
+  //   }
+  // };
+  ngOnInit(): void{
+
+  }
 }
