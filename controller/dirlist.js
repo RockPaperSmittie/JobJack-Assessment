@@ -1,6 +1,7 @@
 const readdir = require('readdir-enhanced');
 const os = require('os');
 const through2 = require('through2');
+const fs = require('fs');
 
 
 let inputDir = ""
@@ -26,25 +27,24 @@ exports.getDir = (req, res, next) => {
     //Empty array that will hold directory contents
     let dataInfo=[]
     let path = homeDir + inputDir
-
+    let isDirExists = fs.existsSync(path) && fs.lstatSync(path).isDirectory();
+    console.log(isDirExists)
+    if(isDirExists === true){
     //Stream data from given directory and piped to dataInfo array
     let stream = readdir.stream.stat(path)
     .pipe(through2.obj((data, enc, next) => {
         let fileType = data.path.split('.').pop();
-        dataInfo.push({size: data.size, 
-            path: path + '/' + data.path, 
-            name: data.path,
-            filetype: fileType});
+        dataInfo.push({fileName: data.path, 
+            filePath: path + '/' + data.path, 
+            fileSize: data.size,
+            fileExt: fileType});
       next();
     }));
     //allows for data to be streamed before response is sent
-    setTimeout(() => {
-        res.status(200).json(dataInfo)
-        for (i of dataInfo) {
-            console.log(i.path, i.size);
-            inputDir='';
-        }
-    }, 1000);
-
-};
-
+        setTimeout(() => {
+            res.status(200).json(dataInfo)
+        }, 1000);
+    }else{
+        return res.status(205).send({message:'Path is not valid'});
+    }
+    };

@@ -37,13 +37,6 @@ callFetch(event){
 
   @Input() changePost: string;
 
-
-
-  // post(data){
-  //   if(data){
-  //     this.fetch()
-  //   }
-  // };
   ngOnInit(): void{
 
   }

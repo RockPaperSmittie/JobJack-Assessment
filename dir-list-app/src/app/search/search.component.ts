@@ -25,22 +25,11 @@ export class SearchComponent implements OnInit {
       this.postChange.emit('POSTED')
     }
   }
-//   fetch(): void {
-//     this.dataService.fetch()
-//         .subscribe(data => {
-//           console.log(data)
-//         }
-//         )
-// }
+
   ngOnInit() {
-    // this.dataService.fetch()
-    // .subscribe(data => {
-    //   this.data = data;
-    //   // set data in service which is to be shared
-    //   this.data.setData(data)
+ 
     }
   
-
   onSearch(inputDir: { search: string}) {
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/x-www-form-urlencoded');

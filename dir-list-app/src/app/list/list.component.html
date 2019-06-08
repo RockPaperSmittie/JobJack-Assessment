@@ -1,21 +1,21 @@
-<div class="container-fluid">
+<div class="container">
   <hr>
     <div class="row">
-      <div class="col-sm">
-        <h4>file name</h4>
-        <p *ngFor="let item of listItems">{{item.fileName}}</p>
-      </div>
-      <div class="col-xl-auto">
-          <h4>file path</h4>
-          <p *ngFor="let item of listItems">{{item.filePath}}</p>
-      </div>
-      <div class="col-sm">
-          <h4>file size</h4>
-          <p *ngFor="let item of listItems">
-              {{item.fileSize}}
-            </p>
-      </div>
-      <div class="col-sm">
+        <div class="col-3">
+          <h4>file name</h4>
+          <p *ngFor="let item of listItems">{{item.fileName}}</p>
+        </div>
+        <div class="col-3" >
+            <h4>file path</h4>
+            <p *ngFor="let item of listItems">{{item.filePath}}</p>
+        </div>
+        <div class="col-md-3">
+            <h4>file size</h4>
+            <p *ngFor="let item of listItems">
+                {{item.fileSize}}
+              </p>
+        </div>
+      <div class="col-md-3">
           <h4>file extension</h4>
           <p *ngFor="let item of listItems">{{item.fileExt}}</p>
       </div>
