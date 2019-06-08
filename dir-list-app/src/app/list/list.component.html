@@ -1,24 +1,21 @@
-<div class="container">
-  <hr>
-    <div class="row">
-        <div class="col-3">
-          <h4>file name</h4>
-          <p *ngFor="let item of listItems">{{item.fileName}}</p>
-        </div>
-        <div class="col-3" >
-            <h4>file path</h4>
-            <p *ngFor="let item of listItems">{{item.filePath}}</p>
-        </div>
-        <div class="col-md-3">
-            <h4>file size</h4>
-            <p *ngFor="let item of listItems">
-                {{item.fileSize}}
-              </p>
-        </div>
-      <div class="col-md-3">
-          <h4>file extension</h4>
-          <p *ngFor="let item of listItems">{{item.fileExt}}</p>
-      </div>
+<head><link href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet"></head>
+<div class="container-fluid">
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>File Name</th>
+            <th>Path</th>
+            <th>Size</th>
+            <th>Ext</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of listItems">
+            <td>{{item.fileName}}</td>
+            <td>{{item.filePath}}</td>
+            <td>{{item.fileSize}}</td>
+            <td>{{item.fileExt}}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-  </div>
-  <hr>

@@ -1,4 +1,11 @@
 img{
-    height: 100px;
+    height: 150px;
+    padding-top: 10px;
+    padding-bottom: 5px;
 }
 
+p{
+    text-align: center;
+    font-family: 'PT Sans', sans-serif;
+    box-shadow: 2px;
+}

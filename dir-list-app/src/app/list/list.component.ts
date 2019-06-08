@@ -3,7 +3,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { listItem } from './list_item.model';
 
 import { DataService } from '../data.service';
-import { post } from 'selenium-webdriver/http';
+
+import { DeviceDetectorService } from 'ngx-device-detector';
 
 
 @Component({
@@ -15,7 +16,14 @@ import { post } from 'selenium-webdriver/http';
 export class ListComponent implements OnInit {
   listItems: listItem[]
 
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService, private deviceService: DeviceDetectorService) { 
+    this.osType();
+  }
+
+  osType(){
+    const isDesktopDevice = this.deviceService.isDesktop();
+    console.log(isDesktopDevice);
+  }
 
   fetch(): void {
     this.dataService.fetch()
@@ -30,7 +38,7 @@ callFetch(event){
   if(event){
     setTimeout(() => {
       this.fetch();
-    }, 500);
+    }, 100);
 
   }
 }
