@@ -5,6 +5,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 
 
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { SearchComponent } from './search/search.component';
@@ -21,7 +22,7 @@ import { HttpErrorInterceptor } from './http.interceptor';
     ListComponent,
   ],
   imports: [
-    BrowserModule, FormsModule, HttpClientModule
+    BrowserModule, FormsModule, HttpClientModule,
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

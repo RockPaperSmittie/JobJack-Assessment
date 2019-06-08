@@ -4,7 +4,7 @@ import { listItem } from './list_item.model';
 
 import { DataService } from '../data.service';
 
-import { DeviceDetectorService } from 'ngx-device-detector';
+// import { DeviceDetectorService } from 'ngx-device-detector';
 
 
 @Component({
@@ -16,14 +16,14 @@ import { DeviceDetectorService } from 'ngx-device-detector';
 export class ListComponent implements OnInit {
   listItems: listItem[]
 
-  constructor(private dataService: DataService, private deviceService: DeviceDetectorService) { 
-    this.osType();
+  constructor(private dataService: DataService,) { 
+    // this.osType();
   }
 
-  osType(){
-    const isDesktopDevice = this.deviceService.isDesktop();
-    console.log(isDesktopDevice);
-  }
+  // osType(){
+  //   const isDesktopDevice = this.deviceService.isDesktop();
+  //   console.log(isDesktopDevice);
+  // }
 
   fetch(): void {
     this.dataService.fetch()

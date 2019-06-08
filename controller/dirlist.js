@@ -36,14 +36,14 @@ exports.getDir = (req, res, next) => {
         let fileType = data.path.split('.').pop();
         dataInfo.push({fileName: data.path, 
             filePath: path + '/' + data.path, 
-            fileSize: data.size,
+            fileSize: data.size +'kb',
             fileExt: fileType});
       next();
     }));
     //allows for data to be streamed before response is sent
         setTimeout(() => {
             res.status(200).json(dataInfo)
-        }, 1000);
+        }, 500);
     }else{
         return res.status(205).send({message:'Path is not valid'});
     }
