@@ -1,0 +1,10 @@
+.container-fluid{
+    font-family: 'PT Sans', sans-serif;
+}
+
+table{
+ border-color: navy;
+}
+tr{
+    border-color: green;
+}

@@ -1,0 +1,12 @@
+.container{
+    padding-bottom: 15px;
+}
+
+.btn-primary:disabled{
+    background-color: #86d987;
+    border-color: silver;
+}
+
+.btn:disabled{
+    opacity: .85;
+}

@@ -1,0 +1,21 @@
+<head><link href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet"></head>
+<div class="container-fluid">
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>File Name</th>
+            <th>Path</th>
+            <th>Size</th>
+            <th>Ext</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of listItems">
+            <td>{{item.fileName}}</td>
+            <td>{{item.filePath}}</td>
+            <td>{{item.fileSize}}</td>
+            <td>{{item.fileExt}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
