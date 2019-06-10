@@ -7,6 +7,7 @@ const app = express();
 
 app.use(bodyParser.json());
 
+//CORS headers
 app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.setHeader('Access-Controll-Allow-Methods', 'GET', 'POST', 'OPTIONS');
