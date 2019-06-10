@@ -10,6 +10,7 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
   
+  //service for sharing data received from rest api
   fetch(): Observable<listItem[]>{
       return this.http.get('/api').pipe(map((response) =>{
         return <listItem[]>response;
