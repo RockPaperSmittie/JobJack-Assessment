@@ -3,6 +3,9 @@
       "target": "http://localhost:2200",
       "secure": false,
       "logLevel": "debug",
-      "changeOrigin": true
-    }
+      "changeOrigin": true,
+      "headers": {
+        "Connection": "keep-alive"
+      }
   }
+}
